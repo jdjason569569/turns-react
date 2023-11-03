@@ -1,0 +1,28 @@
+.container{
+    background-color: greenyellow;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap ;
+  }
+  
+  .turns-container,
+  .search-container,
+  .panel-container,
+  .statics-container {
+    width: calc(50% - 2px); 
+    height: 420px;
+  }
+  
+  .turns-container{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .search-container{
+    border-bottom: 2px solid black;
+  }
+  
+  .panel-container{
+    border-right: 2px solid black;
+  }

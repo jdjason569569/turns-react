@@ -1,13 +1,10 @@
-
 import "./App.css";
+import Home from "./components/home/home.component";
 
 function App() {
   return (
-    <div className="container">
-      <div className="turns-container"></div>
-      <div className="search-container"></div>
-      <div className="panel-container"></div>
-      <div className="statics-container"></div>
+    <div className="App">
+     <Home></Home>
     </div>
   );
 }
