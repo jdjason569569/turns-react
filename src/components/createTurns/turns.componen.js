@@ -4,15 +4,27 @@ import { InputControl } from "../shared/inputControl/inputControl";
 
 function Turns() {
   const [values, setValues] = useState({
-    id: "",
+    identification: "",
     name: "",
   });
+  const apiUrl = "http://localhost:3000/api";
 
   const handleId = (event) => {
-    setValues({ ...values, id: event.target.value });
+    setValues({ ...values, identification: event.target.value });
   };
   const handleName = (event) => {
     setValues({ ...values, name: event.target.value });
+  };
+
+  const saveTurn = async () => {
+    const responseAddTurn = await fetch(`${apiUrl}/turns/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+    return await responseAddTurn.json();
   };
 
   return (
@@ -33,10 +45,11 @@ function Turns() {
             ></InputControl>
           </div>
           <button
+           onClick={saveTurn}
             type="submit"
-            className="btn btn-light btn-sm rounded btn-style"
+            className="btn btn-primary btn-sm rounded btn-style"
           >
-            crear turno
+            Crear Turno
           </button>
           <div></div>
         </div>
